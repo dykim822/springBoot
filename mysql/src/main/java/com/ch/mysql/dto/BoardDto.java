@@ -1,0 +1,13 @@
+package com.ch.mysql.dto;
+import java.sql.Date;
+import lombok.Data;
+@Data
+public class BoardDto {
+	private int boardIdx;
+	private String title;
+	private String contents;
+	private int hitCnt;
+	private String creatorId;
+	private Date createdDate;
+	private String deletedYn;
+}
