@@ -1,4 +1,4 @@
-package com.ch.mysql.configuration;
+package com.ch.oracle.configuration;
 import javax.sql.DataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -39,6 +39,7 @@ public class DatabaseConfiguration {
 		sqlSessionFactoryBean.setMapperLocations(
 			applicationContext.getResources("classpath:/mapper/**/sql-*.xml"));
 		sqlSessionFactoryBean.setConfiguration(mybatisConfig());
+		sqlSessionFactoryBean.setTypeAliasesPackage("com.ch.oracle.model");
 		return sqlSessionFactoryBean.getObject();
 	}
 	@Bean

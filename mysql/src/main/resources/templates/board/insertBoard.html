@@ -1,22 +1,20 @@
 <!DOCTYPE html>
+<!-- thymeleaf : jstl과 유사한 역할 -->
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<head><meta charset="UTF-8"><title>Insert title here</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
-</head>
-<body>
-	<span th:if="${result} > 0">	<!-- jsp에서는 ${}내에 숫자도 넣었지만, spingboot에서는 바깥에 넣어야 한다 -->
-		<script type="text/javascript">
-			alert("성공적으로 입력되었습니다");
-			location.href="/board/boardList.do";
-		</script>
-	</span>
-	<span th:if="${result} == 0">
-		<script type="text/javascript">
-			alert("입력에 실패하였습니다");
-			history.back();
-		</script>
-	</span>
+</head><body>
+<span th:if="${result} > 0">
+	<script type="text/javascript">
+		alert("입력 되었습니다");
+		location.href="/board/boardList.do";
+	</script>
+</span>
+<span th:if="${result} == 0">
+	<script type="text/javascript">
+		alert("입력 실패");
+		history.go(-1);
+	</script>
+</span>
 </body>
 </html>
