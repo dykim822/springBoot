@@ -79,7 +79,7 @@ public class EmpController {
 		model.addAttribute("emp", emp);
 		return "/emp/empDelete";
 	}
-	@RequestMapping("allEmpList")
+	@RequestMapping("/emp/allEmpList.do")
 	public String allEmpList(Model model) {
 		List<Emp> list = es.allList();
 		model.addAttribute("list", list);
